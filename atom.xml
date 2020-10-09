@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>SUBJUGATE</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2020-10-09T03:17:32.068Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>Subjugate</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>文件操作</title>
+    <link href="http://example.com/2020/10/09/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/"/>
+    <id>http://example.com/2020/10/09/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</id>
+    <published>2020-10-09T03:12:00.000Z</published>
+    <updated>2020-10-09T03:17:32.068Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="打开、创建文件："><a href="#打开、创建文件：" class="headerlink" title="打开、创建文件："></a>打开、创建文件：</h3><pre><code>1. 创建文件  Create：     文件不存在创建， 文件存在，将文件内容清空。    参数：name， 打开文件的路径： 绝对路径、相对路径        目录分割符：/ </code></pre><a id="more"></a><pre><code>2. 打开文件 Open：        以只读方式打开文件。文件不存在，打开失败。    参数：name， 打开文件的路径： 绝对路径、相对路径3. 打开文件 OpenFile：    以只读、只写、读写 方式打开文件。文件不存在，打开失败。    参1：name， 打开文件的路径： 绝对路径、相对路径    参2：打开文件权限： O_RDONLY、O_WRONLY、O_RDWR    参3：一般传 6</code></pre><h3 id="写文件："><a href="#写文件：" class="headerlink" title="写文件："></a>写文件：</h3><pre><code>按字符串写：WriteString（）    --&gt; n个写入的字符个数    n, err := f.WriteString(&quot;123&quot;)    回车换行：    windows： \r\n    Linux: \n按位置写:    Seek():     修改文件的读写指针位置。    参1： 偏移量。 正：向文件尾偏， 负：向文件头偏    参2： 偏移起始位置：            io.SeekStart: 文件起始位置        io.SeekCurrent： 文件当前位置        io.SeekEnd: 文件结尾位置    返回值：表示从文件起始位置，到当前文件读写指针位置的偏移量。    off, _ := f.Seek(-5, io.SeekEnd)按字节写：    writeAt():  在文件制定偏移位置，写入 []byte ,  通常搭配 Seek()    参1： 待写入的数据    参2：偏移量    返回：实际写出的字节数。    n, _ = f.WriteAt([]byte(&quot;1111&quot;), off)    </code></pre><h3 id="读文件："><a href="#读文件：" class="headerlink" title="读文件："></a>读文件：</h3><pre><code>按行读    1）.  创建一个带有缓冲区的 Reader（读写器）        reader : = bufio.NewReader(打开的文件指针)    2）.  从reader的缓冲区中 ，读取指定长度的数据。数据长度取决于 参数 dlime        buf, err := reader.ReadBytes( &#39; \n&#39; )      按行读。        判断到达文件结尾： if err != nil &amp;&amp; err == io.EOF  到文件结尾。            文件结束标记，是要单独读一次获取到的。缓冲区：内存中的一块区域，用来减少物理磁盘访问操作。 《计算硬件及组成原理》 —— 机械工业出版社。</code></pre><h3 id="按字节读、写文件。"><a href="#按字节读、写文件。" class="headerlink" title="按字节读、写文件。"></a>按字节读、写文件。</h3><pre><code>read([]byte):  按字节读文件write([]byte)：按字节字节</code></pre>]]></content>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;打开、创建文件：&quot;&gt;&lt;a href=&quot;#打开、创建文件：&quot; class=&quot;headerlink&quot; title=&quot;打开、创建文件：&quot;&gt;&lt;/a&gt;打开、创建文件：&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;1. 创建文件  Create：     文件不存在创建， 文件存在，将文件内容清空。
+
+    参数：name， 打开文件的路径： 绝对路径、相对路径        目录分割符：/ &lt;/code&gt;&lt;/pre&gt;</summary>
+    
+    
+    
+    <category term="区块链技术基础" scheme="http://example.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="区块链|go语言" scheme="http://example.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE-go%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>随笔(一些需要注意的小细节)</title>
+    <link href="http://example.com/2020/10/09/%E9%9A%8F%E7%AC%94(%E4%B8%80%E4%BA%9B%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%B0%8F%E7%BB%86%E8%8A%82)/"/>
+    <id>http://example.com/2020/10/09/%E9%9A%8F%E7%AC%94(%E4%B8%80%E4%BA%9B%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%B0%8F%E7%BB%86%E8%8A%82)/</id>
+    <published>2020-10-09T03:12:00.000Z</published>
+    <updated>2020-10-09T03:17:15.409Z</updated>
+    
+    <content type="html"><![CDATA[<p>int类型是一个特殊的类型，在64位电脑上占8个字节，在32位电脑上占4个字节</p><h2 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><h3 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h3><ol><li>布尔类型数据与整型数据不能进行交换</li><li>声明的布尔类型默认为<font color=red>false</font></li></ol><a id="more"></a><h3 id="浮点型"><a href="#浮点型" class="headerlink" title="浮点型"></a>浮点型</h3><ol><li>浮点数字面量被自动类型推断为<font color=red>float64</font>类型</li><li>两个浮点数之间不应该使用==或!=进行比较操作，应该使用math标准库</li></ol><h3 id="复数类型"><a href="#复数类型" class="headerlink" title="复数类型"></a>复数类型</h3><ol><li>复数类型有两种：complex64和complex128，复数在计算机中由两个浮点数表示，一个实部一个虚部<ol><li>complex64：两个float32组成</li><li>complex128：两个float64构成</li></ol></li><li>三个内置函数：<ol><li>complex()：构造一个复数</li><li>real()：返回一个复数实部</li><li>image()：返回复数虚部<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3></li></ol></li><li>字符串是常量，可以直接通过索引访问其字节单位，但是不能修改</li><li>字符串尾部<font color=red>不包含NULL字符</font></li><li>基于字符串创建的切片和原字符串指向相同的底层字符数组，一样不能修改，对字符串的切片操作返回的子串仍是string，而非slice<br>   <img src="https://github.com/18yang/-01/blob/go%E8%AF%AD%E8%A8%80%E9%9A%8F%E7%AC%94/go%E8%AF%AD%E8%A8%80%E9%9A%8F%E7%AC%94picture1.png?raw=true" alt="字符串"></li></ol><h3 id="rune类型"><a href="#rune类型" class="headerlink" title="rune类型"></a>rune类型</h3><ol><li>Go内置两种字符类型：<ol><li>一种是byte的字节类类型（byte是uint的别名）</li><li>一种是Unicode编码的字符rune（rune是int32的别名，占用四个字节）</li></ol></li><li>Go语言默认的字符编码就是UTF-8类型的，如果需要特殊的编码转换，则使用Unicode/UTF-8标准包</li></ol><h3 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h3><ol><li>Go语言支持多级指针**T</li><li>Go不支持指针运算</li><li>函数中允许返回局部变量的地址<ul><li>Go编译器使用<font color=red>栈逃逸</font>机制将这种局部变量的空间分配在堆上  <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sum</span><span class="params">(a,b <span class="keyword">int</span>)</span> *<span class="title">int</span></span>&#123;</span><br><span class="line">    sum := a + b</span><br><span class="line">    <span class="keyword">return</span> &amp;sum <span class="comment">//sum将分配在堆上</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul></li></ol><h3 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h3><p><img src="https://github.com/18yang/-01/blob/go%E8%AF%AD%E8%A8%80%E9%9A%8F%E7%AC%94/go%E8%AF%AD%E8%A8%80%E9%9A%8F%E7%AC%94picture2.png?raw=true" alt="切片"></p><ul><li><p>切片支持的操作</p><ul><li>内置函数len()返回切片长度</li><li>内置函数cap()返回切片底层数组容量</li><li>内置函数append()对切片追加元素</li><li>内置函数copy()用于复制一个切片</li></ul></li><li><p>切片：</p><p>  为什么用切片：</p><pre><code>  1. 数组的容量固定，不能自动拓展。  2. 值传递。 数组作为函数参数时，将整个数组值拷贝一份给形参。  在Go语言当，我们几乎可以在所有的场景中，使用 切片替换数组使用。</code></pre><p>  切片的本质：</p><pre><code>  不是一个数组的指针，是一种数据结构体，用来操作数组内部元素。    runtime/slice.go    type slice struct &#123;                                                  *p                                           len</code></pre><p>  切片的使用：                                        cap</p><pre><code>                                      &#125;  数组和切片定义区别：      创建数组时 [ ] 指定数组长度。      创建切片时， [] 为空，或者 ...   切片名称 [ low : high : max ]  low: 起始下标位置  high：结束下标位置    len = high - low  容量：cap = max - low  截取数组，初始化 切片时，没有指定切片容量时， 切片容量跟随原数组（切片）。      s[:high:max] : 从 0 开始，到 high结束。（不包含）      s[low:] :    从low 开始，到 末尾      s[: high]:    从 0 开始，到 high结束。容量跟随原先容量。【常用】</code></pre><p>  切片创建：</p><pre><code>  1. 自动推导类型创建 切片。slice := []int &#123;1, 2, 4, 6&#125;  2. slice := make([]int, 长度，容量)  3. slice := make([]int, 长度）        创建切片时，没有指定容量， 容量== 长度。【常用】    </code></pre><p>  切片做函数参数 —— 传引用。（传地址）</p><p>  append：在切片末尾追加元素</p><pre><code>  append(切片对象， 待追加元素）  向切片增加元素时，切片的容量会自动增长。1024 以下时，一两倍方式增长。</code></pre><p>  copy：</p><pre><code>  copy（目标位置切片， 源切片）  拷贝过程中，直接对应位置拷贝。</code></pre></li><li><p>map：</p><p>  字典、映射      key —— value    key： 唯一、无序。 不能是引用类型数据。</p><pre><code>      map 不能使用 cap（）</code></pre><p>  创建方式：</p><pre><code>  1.  var m1 map[int]string        --- 不能存储数据  2. m2 := map[int]string&#123;&#125;        ---能存储数据  3. m3 := make(map[int]string)        ---默认len = 0  4. m4 := make(map[int]string, 10)</code></pre><p>  初始化：</p><pre><code>  1. var m map[int]string = map[int]string&#123; 1: &quot;aaa&quot;, 2:&quot;bbb&quot;&#125;    保证key彼此不重复。  2. m := map[int]string&#123; 1: &quot;aaa&quot;, 2:&quot;bbb&quot;&#125;</code></pre><p>  赋值:</p><pre><code>  赋值过程中，如果新map元素的key与原map元素key 相同     ——&gt; 覆盖（替换）  赋值过程中，如果新map元素的key与原map元素key 不同    ——&gt; 添加</code></pre><p>  map的使用：</p><pre><code>  遍历map：      for  key值， value值 := range map &#123;      &#125;       for  key值 := range map &#123;      &#125;      判断map中key是否存在。       map[下标] 运算：返回两个值， 第一个表 value 的值，如果value不存在。 nil                  第二个表 key是否存在的bool类型。存在 true， 不存在false</code></pre><p>  删除map：</p><pre><code>  delete()函数：     参1： 待删除元素的map    参2： key值  delete（map， key）    删除一个不存在的key ， 不会报错。  map 做函数参数和返回值，传引用。</code></pre></li></ul><h3 id="Switch"><a href="#Switch" class="headerlink" title="Switch"></a>Switch</h3><ul><li>在switch中加入了一个<font color=red>fallthough</font>关键字，强制执行下一个case语句，不在判断下一个case子句的条件是否成立</li><li>switch后面可以加入一个初始化语句，用分号隔开  <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> i := <span class="string">&quot;y&quot;</span>; i&#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&quot;y&quot;</span>: ···</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><ol><li>首字母大小写决定该函数在其他包是否可见：大写时其他包可见，小写时只有相同包可以访问</li><li>不支持默认值参数</li><li>不支持函数重载</li><li>不支持函数嵌套（除匿名函数外）</li></ol><h4 id="延迟调用函数—defer"><a href="#延迟调用函数—defer" class="headerlink" title="延迟调用函数—defer"></a>延迟调用函数—defer</h4><ol><li>defer后面必须是函数或方法的调用</li><li>defer函数的实参在注册时通过值拷贝传递进去</li><li>defer函数的调用<font color=red>先进后出</font></li></ol><h3 id="panic和recover"><a href="#panic和recover" class="headerlink" title="panic和recover"></a>panic和recover</h3><ol><li>panic用来主动抛出错误，recover用来捕获panic抛出的错误<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">panic</span>(i <span class="keyword">interface</span>&#123;&#125;)</span><br><span class="line"><span class="built_in">recover</span>() <span class="keyword">interface</span>&#123;&#125;</span><br></pre></td></tr></table></figure></li><li>panic的参数是一个空接口类型interface{}，所以任意类型的变量都可以传递给panic</li><li>发生panic后，程序就会从调用panic的函数位置或者发生panic的地方立即返回，逐层向上执行函数的defer语句，然后逐层打印函数调用堆栈，直到recover捕获或运行到最外层函数而退出</li><li>recover()用来捕获panic，阻止panic继续向上传递。</li><li>recover和defer一起使用，但是recover只有在defer后面的函数体内才能被直接调用才能捕获panic终止异常，否则返回nil，异常继续向外传递<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这个会捕获失败</span></span><br><span class="line"><span class="keyword">defer</span> <span class="built_in">recover</span>()</span><br><span class="line"><span class="comment">//这个才能调用成功</span></span><br><span class="line"><span class="keyword">defer</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">recover</span>()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li>包中init函数引发的panic只能在init函数中捕获，在main函数中无法被捕获，原因是init函数先于main函数执行</li></ol>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;int类型是一个特殊的类型，在64位电脑上占8个字节，在32位电脑上占4个字节&lt;/p&gt;
+&lt;h2 id=&quot;基本数据类型&quot;&gt;&lt;a href=&quot;#基本数据类型&quot; class=&quot;headerlink&quot; title=&quot;基本数据类型&quot;&gt;&lt;/a&gt;基本数据类型&lt;/h2&gt;&lt;h3 id=&quot;布尔类型&quot;&gt;&lt;a href=&quot;#布尔类型&quot; class=&quot;headerlink&quot; title=&quot;布尔类型&quot;&gt;&lt;/a&gt;布尔类型&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;布尔类型数据与整型数据不能进行交换&lt;/li&gt;
+&lt;li&gt;声明的布尔类型默认为&lt;font color=red&gt;false&lt;/font&gt;&lt;/li&gt;
+&lt;/ol&gt;</summary>
+    
+    
+    
+    <category term="区块链技术基础" scheme="http://example.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="区块链|go语言" scheme="http://example.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE-go%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+</feed>
