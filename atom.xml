@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-10-09T03:17:32.068Z</updated>
+  <updated>2020-10-09T03:17:15.409Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,29 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>文件操作</title>
-    <link href="http://example.com/2020/10/09/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/"/>
-    <id>http://example.com/2020/10/09/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</id>
-    <published>2020-10-09T03:12:00.000Z</published>
-    <updated>2020-10-09T03:17:32.068Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="打开、创建文件："><a href="#打开、创建文件：" class="headerlink" title="打开、创建文件："></a>打开、创建文件：</h3><pre><code>1. 创建文件  Create：     文件不存在创建， 文件存在，将文件内容清空。    参数：name， 打开文件的路径： 绝对路径、相对路径        目录分割符：/ </code></pre><a id="more"></a><pre><code>2. 打开文件 Open：        以只读方式打开文件。文件不存在，打开失败。    参数：name， 打开文件的路径： 绝对路径、相对路径3. 打开文件 OpenFile：    以只读、只写、读写 方式打开文件。文件不存在，打开失败。    参1：name， 打开文件的路径： 绝对路径、相对路径    参2：打开文件权限： O_RDONLY、O_WRONLY、O_RDWR    参3：一般传 6</code></pre><h3 id="写文件："><a href="#写文件：" class="headerlink" title="写文件："></a>写文件：</h3><pre><code>按字符串写：WriteString（）    --&gt; n个写入的字符个数    n, err := f.WriteString(&quot;123&quot;)    回车换行：    windows： \r\n    Linux: \n按位置写:    Seek():     修改文件的读写指针位置。    参1： 偏移量。 正：向文件尾偏， 负：向文件头偏    参2： 偏移起始位置：            io.SeekStart: 文件起始位置        io.SeekCurrent： 文件当前位置        io.SeekEnd: 文件结尾位置    返回值：表示从文件起始位置，到当前文件读写指针位置的偏移量。    off, _ := f.Seek(-5, io.SeekEnd)按字节写：    writeAt():  在文件制定偏移位置，写入 []byte ,  通常搭配 Seek()    参1： 待写入的数据    参2：偏移量    返回：实际写出的字节数。    n, _ = f.WriteAt([]byte(&quot;1111&quot;), off)    </code></pre><h3 id="读文件："><a href="#读文件：" class="headerlink" title="读文件："></a>读文件：</h3><pre><code>按行读    1）.  创建一个带有缓冲区的 Reader（读写器）        reader : = bufio.NewReader(打开的文件指针)    2）.  从reader的缓冲区中 ，读取指定长度的数据。数据长度取决于 参数 dlime        buf, err := reader.ReadBytes( &#39; \n&#39; )      按行读。        判断到达文件结尾： if err != nil &amp;&amp; err == io.EOF  到文件结尾。            文件结束标记，是要单独读一次获取到的。缓冲区：内存中的一块区域，用来减少物理磁盘访问操作。 《计算硬件及组成原理》 —— 机械工业出版社。</code></pre><h3 id="按字节读、写文件。"><a href="#按字节读、写文件。" class="headerlink" title="按字节读、写文件。"></a>按字节读、写文件。</h3><pre><code>read([]byte):  按字节读文件write([]byte)：按字节字节</code></pre>]]></content>
-    
-    
-    <summary type="html">&lt;h3 id=&quot;打开、创建文件：&quot;&gt;&lt;a href=&quot;#打开、创建文件：&quot; class=&quot;headerlink&quot; title=&quot;打开、创建文件：&quot;&gt;&lt;/a&gt;打开、创建文件：&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;1. 创建文件  Create：     文件不存在创建， 文件存在，将文件内容清空。
-
-    参数：name， 打开文件的路径： 绝对路径、相对路径        目录分割符：/ &lt;/code&gt;&lt;/pre&gt;</summary>
-    
-    
-    
-    <category term="区块链技术基础" scheme="http://example.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80/"/>
-    
-    
-    <category term="区块链|go语言" scheme="http://example.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE-go%E8%AF%AD%E8%A8%80/"/>
-    
-  </entry>
   
   <entry>
     <title>随笔(一些需要注意的小细节)</title>
@@ -54,6 +31,29 @@
 &lt;li&gt;布尔类型数据与整型数据不能进行交换&lt;/li&gt;
 &lt;li&gt;声明的布尔类型默认为&lt;font color=red&gt;false&lt;/font&gt;&lt;/li&gt;
 &lt;/ol&gt;</summary>
+    
+    
+    
+    <category term="区块链技术基础" scheme="http://example.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="区块链|go语言" scheme="http://example.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE-go%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>文件操作</title>
+    <link href="http://example.com/2020/10/09/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/"/>
+    <id>http://example.com/2020/10/09/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</id>
+    <published>2020-10-09T03:12:00.000Z</published>
+    <updated>2020-10-09T03:17:32.068Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="打开、创建文件："><a href="#打开、创建文件：" class="headerlink" title="打开、创建文件："></a>打开、创建文件：</h3><pre><code>1. 创建文件  Create：     文件不存在创建， 文件存在，将文件内容清空。    参数：name， 打开文件的路径： 绝对路径、相对路径        目录分割符：/ </code></pre><a id="more"></a><pre><code>2. 打开文件 Open：        以只读方式打开文件。文件不存在，打开失败。    参数：name， 打开文件的路径： 绝对路径、相对路径3. 打开文件 OpenFile：    以只读、只写、读写 方式打开文件。文件不存在，打开失败。    参1：name， 打开文件的路径： 绝对路径、相对路径    参2：打开文件权限： O_RDONLY、O_WRONLY、O_RDWR    参3：一般传 6</code></pre><h3 id="写文件："><a href="#写文件：" class="headerlink" title="写文件："></a>写文件：</h3><pre><code>按字符串写：WriteString（）    --&gt; n个写入的字符个数    n, err := f.WriteString(&quot;123&quot;)    回车换行：    windows： \r\n    Linux: \n按位置写:    Seek():     修改文件的读写指针位置。    参1： 偏移量。 正：向文件尾偏， 负：向文件头偏    参2： 偏移起始位置：            io.SeekStart: 文件起始位置        io.SeekCurrent： 文件当前位置        io.SeekEnd: 文件结尾位置    返回值：表示从文件起始位置，到当前文件读写指针位置的偏移量。    off, _ := f.Seek(-5, io.SeekEnd)按字节写：    writeAt():  在文件制定偏移位置，写入 []byte ,  通常搭配 Seek()    参1： 待写入的数据    参2：偏移量    返回：实际写出的字节数。    n, _ = f.WriteAt([]byte(&quot;1111&quot;), off)    </code></pre><h3 id="读文件："><a href="#读文件：" class="headerlink" title="读文件："></a>读文件：</h3><pre><code>按行读    1）.  创建一个带有缓冲区的 Reader（读写器）        reader : = bufio.NewReader(打开的文件指针)    2）.  从reader的缓冲区中 ，读取指定长度的数据。数据长度取决于 参数 dlime        buf, err := reader.ReadBytes( &#39; \n&#39; )      按行读。        判断到达文件结尾： if err != nil &amp;&amp; err == io.EOF  到文件结尾。            文件结束标记，是要单独读一次获取到的。缓冲区：内存中的一块区域，用来减少物理磁盘访问操作。 《计算硬件及组成原理》 —— 机械工业出版社。</code></pre><h3 id="按字节读、写文件。"><a href="#按字节读、写文件。" class="headerlink" title="按字节读、写文件。"></a>按字节读、写文件。</h3><pre><code>read([]byte):  按字节读文件write([]byte)：按字节字节</code></pre>]]></content>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;打开、创建文件：&quot;&gt;&lt;a href=&quot;#打开、创建文件：&quot; class=&quot;headerlink&quot; title=&quot;打开、创建文件：&quot;&gt;&lt;/a&gt;打开、创建文件：&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;1. 创建文件  Create：     文件不存在创建， 文件存在，将文件内容清空。
+
+    参数：name， 打开文件的路径： 绝对路径、相对路径        目录分割符：/ &lt;/code&gt;&lt;/pre&gt;</summary>
     
     
     
