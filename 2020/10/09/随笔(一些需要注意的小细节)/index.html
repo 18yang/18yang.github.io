@@ -14,17 +14,21 @@
 <meta name="author" content="Subjugate" />
 
 
-    
-    
 
-
-<meta property="og:type" content="website">
+<meta name="description" content="随笔(一些需要注意的小细节)int类型是一个特殊的类型，在64位电脑上占8个字节，在32位电脑上占4个字节 基本数据类型布尔类型 布尔类型数据与整型数据不能进行交换 声明的布尔类型默认为false  浮点型 浮点数字面量被自动类型推断为float64类型 两个浮点数之间不应该使用&#x3D;&#x3D;或!&#x3D;进行比较操作，应该使用math标准库  复数类型 复数类型有两种：complex64和complex128，复">
+<meta property="og:type" content="article">
 <meta property="og:title" content="SUBJUGATE">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:url" content="http://example.com/2020/10/09/%E9%9A%8F%E7%AC%94(%E4%B8%80%E4%BA%9B%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%B0%8F%E7%BB%86%E8%8A%82)/index.html">
 <meta property="og:site_name" content="SUBJUGATE">
+<meta property="og:description" content="随笔(一些需要注意的小细节)int类型是一个特殊的类型，在64位电脑上占8个字节，在32位电脑上占4个字节 基本数据类型布尔类型 布尔类型数据与整型数据不能进行交换 声明的布尔类型默认为false  浮点型 浮点数字面量被自动类型推断为float64类型 两个浮点数之间不应该使用&#x3D;&#x3D;或!&#x3D;进行比较操作，应该使用math标准库  复数类型 复数类型有两种：complex64和complex128，复">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://github.com/18yang/-01/blob/go%E8%AF%AD%E8%A8%80%E9%9A%8F%E7%AC%94/go%E8%AF%AD%E8%A8%80%E9%9A%8F%E7%AC%94picture1.png?raw=true">
+<meta property="og:image" content="https://github.com/18yang/-01/blob/go%E8%AF%AD%E8%A8%80%E9%9A%8F%E7%AC%94/go%E8%AF%AD%E8%A8%80%E9%9A%8F%E7%AC%94picture2.png?raw=true">
+<meta property="article:published_time" content="2020-10-09T01:48:53.832Z">
+<meta property="article:modified_time" content="2020-10-06T05:24:17.529Z">
 <meta property="article:author" content="Subjugate">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/18yang/-01/blob/go%E8%AF%AD%E8%A8%80%E9%9A%8F%E7%AC%94/go%E8%AF%AD%E8%A8%80%E9%9A%8F%E7%AC%94picture1.png?raw=true">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -54,8 +58,6 @@
 
 
 
-    <style> .article { opacity: 0;} </style>
-
 
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
@@ -69,8 +71,8 @@
     var yiliaConfig = {
         fancybox: true,
         animate: true,
-        isHome: true,
-        isPost: false,
+        isHome: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -260,9 +262,7 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-随笔(一些需要注意的小细节)" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-随笔(一些需要注意的小细节)" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2020/10/09/%E9%9A%8F%E7%AC%94(%E4%B8%80%E4%BA%9B%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%B0%8F%E7%BB%86%E8%8A%82)/" class="article-date">
@@ -455,137 +455,119 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2020/10/09/%E9%9A%8F%E7%AC%94(%E4%B8%80%E4%BA%9B%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%B0%8F%E7%BB%86%E8%8A%82)/"></a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage"></a></p>
+        <p><span>Created:</span>2020-10-09, 09:48:53</p>
+        <p><span>Updated:</span>2020-10-06, 13:24:17</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2020/10/09/%E9%9A%8F%E7%AC%94(%E4%B8%80%E4%BA%9B%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%B0%8F%E7%BB%86%E8%8A%82)/" title="">http://example.com/2020/10/09/%E9%9A%8F%E7%AC%94(%E4%B8%80%E4%BA%9B%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%B0%8F%E7%BB%86%E8%8A%82)/</a>
+            <span class="copy-path" data-clipboard-text="From http://example.com/2020/10/09/%E9%9A%8F%E7%AC%94(%E4%B8%80%E4%BA%9B%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%B0%8F%E7%BB%86%E8%8A%82)/　　By " title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2020/10/09/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/">
+                    
+                </a>
+            </div>
+        
+    </nav>
+
   
 </article>
 
-
-
-
-
-
-
-
-
-  
-    <article id="post-文件操作" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/10/09/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" class="article-date">
-      <time datetime="2020-10-09T01:48:53.829Z" itemprop="datePublished">2020-10-09</time>
-</a>
-
-
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9A%8F%E7%AC%94-%E4%B8%80%E4%BA%9B%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%B0%8F%E7%BB%86%E8%8A%82"><span class="toc-number">1.</span> <span class="toc-text">随笔(一些需要注意的小细节)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.</span> <span class="toc-text">基本数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.1.</span> <span class="toc-text">布尔类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E5%9E%8B"><span class="toc-number">1.1.2.</span> <span class="toc-text">浮点型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E6%95%B0%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.3.</span> <span class="toc-text">复数类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.1.4.</span> <span class="toc-text">字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rune%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.5.</span> <span class="toc-text">rune类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E9%92%88"><span class="toc-number">1.1.6.</span> <span class="toc-text">指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E7%89%87"><span class="toc-number">1.1.7.</span> <span class="toc-text">切片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Switch"><span class="toc-number">1.1.8.</span> <span class="toc-text">Switch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.9.</span> <span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BB%B6%E8%BF%9F%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0%E2%80%94defer"><span class="toc-number">1.1.9.1.</span> <span class="toc-text">延迟调用函数—defer</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#panic%E5%92%8Crecover"><span class="toc-number">1.1.10.</span> <span class="toc-text">panic和recover</span></a></li></ol></li></ol></li></ol>
+        
     </div>
-  
-  <div class="article-inner">
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
+
+
+
     
-      <input type="hidden" class="isFancy" />
+<div class="share">
     
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"　| SUBJUGATE　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h1><h3 id="打开、创建文件："><a href="#打开、创建文件：" class="headerlink" title="打开、创建文件："></a>打开、创建文件：</h3><pre><code>1. 创建文件  Create：     文件不存在创建， 文件存在，将文件内容清空。
 
-    参数：name， 打开文件的路径： 绝对路径、相对路径        目录分割符：/ 
+    
+</div>
 
-2. 打开文件 Open：        以只读方式打开文件。文件不存在，打开失败。
 
-    参数：name， 打开文件的路径： 绝对路径、相对路径
 
-3. 打开文件 OpenFile：    以只读、只写、读写 方式打开文件。文件不存在，打开失败。
 
-    参1：name， 打开文件的路径： 绝对路径、相对路径
 
-    参2：打开文件权限： O_RDONLY、O_WRONLY、O_RDWR
 
-    参3：一般传 6</code></pre>
-<h3 id="写文件："><a href="#写文件：" class="headerlink" title="写文件："></a>写文件：</h3><pre><code>按字符串写：WriteString（）    --&gt; n个写入的字符个数
 
-    n, err := f.WriteString(&quot;123&quot;)
+    
 
-    回车换行：    windows： \r\n    Linux: \n
 
-按位置写:
-    Seek():     修改文件的读写指针位置。
 
-    参1： 偏移量。 正：向文件尾偏， 负：向文件头偏
 
-    参2： 偏移起始位置：    
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+        
 
-        io.SeekStart: 文件起始位置
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
-        io.SeekCurrent： 文件当前位置
-
-        io.SeekEnd: 文件结尾位置
-
-    返回值：表示从文件起始位置，到当前文件读写指针位置的偏移量。
-
-    off, _ := f.Seek(-5, io.SeekEnd)
-按字节写：
-    writeAt():  在文件制定偏移位置，写入 []byte ,  通常搭配 Seek()
-
-    参1： 待写入的数据
-
-    参2：偏移量
-
-    返回：实际写出的字节数。
-
-    n, _ = f.WriteAt([]byte(&quot;1111&quot;), off)    </code></pre>
-<h3 id="读文件："><a href="#读文件：" class="headerlink" title="读文件："></a>读文件：</h3><pre><code>按行读
-    1）.  创建一个带有缓冲区的 Reader（读写器）
-
-        reader : = bufio.NewReader(打开的文件指针)
-
-    2）.  从reader的缓冲区中 ，读取指定长度的数据。数据长度取决于 参数 dlime
-
-        buf, err := reader.ReadBytes( &#39; \n&#39; )      按行读。
-
-        判断到达文件结尾： if err != nil &amp;&amp; err == io.EOF  到文件结尾。
-
-            文件结束标记，是要单独读一次获取到的。
-
-缓冲区：内存中的一块区域，用来减少物理磁盘访问操作。 《计算硬件及组成原理》 —— 机械工业出版社。</code></pre>
-<h3 id="按字节读、写文件。"><a href="#按字节读、写文件。" class="headerlink" title="按字节读、写文件。"></a>按字节读、写文件。</h3><pre><code>read([]byte):  按字节读文件
-
-write([]byte)：按字节字节</code></pre>
-
-      
+        
+            <a href="/2020/10/09/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" title="Next: ">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
     </div>
-    
-    <div class="article-info article-info-index">
-      
-      
 
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/10/09/%E9%9A%8F%E7%AC%94(%E4%B8%80%E4%BA%9B%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%B0%8F%E7%BB%86%E8%8A%82)/">随笔(一些需要注意的小细节)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/10/09/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/">文件操作</a></li></ul>
 
 
 
 
-
-
-
-
-
-  
-  
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
