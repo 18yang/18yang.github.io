@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="18yang">
+    
+    <title>
+        
+            Java JUC |
+        
+        Subjugate
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Subjugate
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                LINKS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links">LINKS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Java JUC</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">18yang</span>
+                        
+                            <span class="author-label">Lv1</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-04-02 21:08:44</span>
+        <span class="mobile">2022-04-02 21:08</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/java/">java</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="1-什么是volatile？"><a href="#1-什么是volatile？" class="headerlink" title="1. 什么是volatile？"></a>1. 什么是volatile？</h2><blockquote>
+<p>volatile是Java虚拟机提供的轻量级的同步机制，保证可见性，不保证原子性，禁止指令重排</p>
+<ol>
+<li>保证可见性</li>
+<li>不保证原子性</li>
+<li>禁止指令重排</li>
+</ol>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">volatile</span> 的可见性</span><br><span class="line">    <span class="comment">/*一个线程对共享变量（主内存变量）的修改，能够及时的被其他线程看到</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">    volatile实现内存可见性是通过store和load指令完成的；</span></span><br><span class="line"><span class="comment">    也就是对volatile变量执行写操作时，会在写操作后加入一条store指令，即强迫线程将最新的值刷新到主内存中；</span></span><br><span class="line"><span class="comment">    而在读操作时，会加入一条load指令，即强迫从主内存中读入变量的值。</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    </span><br><span class="line"><span class="keyword">volatile</span> 的不保证原子性</span><br><span class="line">    <span class="comment">/*原子性表示不可分割，完整性，线程在做某个业务时不可以被分割，整体要么同时成功，要么同时失败</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">    如何解决原子性？</span></span><br><span class="line"><span class="comment">    	使用juc.atomic包下的类，比如 AtomicInteger 带原子包装的整型类</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    </span><br><span class="line"><span class="keyword">volatile</span> 禁止指令重排</span><br><span class="line">    <span class="comment">/*指令重排：代码顺序和执行顺序不见得是一样的，计算机在执行程序时，为了提高性能，编译器和处理器通常都会对指令进行重排</span></span><br><span class="line"><span class="comment">    一般分为 编译器优化重排，指令并行重排，内存系统重排</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">    处理器在进行重排序时必须考虑指令间的数据依赖性    单线程无须担心指令重排，多线程环境可能无法预测结果</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">    使用内存屏障保证禁止指令重排</span></span><br><span class="line"><span class="comment">    */</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="内存屏障"><a href="#内存屏障" class="headerlink" title="内存屏障"></a>内存屏障</h4><ul>
+<li>内存屏障（memory barrier） 是一个CPU指令。基本上，它是这样一条指令：</li>
+<li>a) 确保一些特定操作执行的顺序；</li>
+<li>b) 影响一些数据的可见性(可能是某些指令执行后的结果)。编译器和CPU可以在保证输出结果一样的情况下对指令重排序，使性能得到优化。插入一个内存屏障， 相当于告诉CPU和编译器先于这个命令的必须先执行，后于这个命令的必须后执行。内存屏障另一个作用是强制更新一次不同CPU的缓存。例如，一个写屏障会 把这个屏障前写入的数据刷新到缓存，这样任何试图读取该数据的线程将得到最新值，而不用考虑到底是被哪个cpu核心或者哪颗CPU执行的。</li>
+</ul>
+<h4 id="volatile和synchronized的比较"><a href="#volatile和synchronized的比较" class="headerlink" title="volatile和synchronized的比较"></a>volatile和synchronized的比较</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>）<span class="title class_">Synchronized</span>保证内存可见性和操作的原子性</span><br><span class="line"><span class="number">2</span>）<span class="title class_">Volatile</span>只能保证内存可见性</span><br><span class="line"><span class="number">3</span>）<span class="title class_">Volatile</span>不需要加锁，比<span class="title class_">Synchronized</span>更轻量级，并不会阻塞线程（volatile不会造成线程的阻塞；synchronized可能会造成线程的阻塞。）</span><br><span class="line"><span class="number">4</span>）volatile标记的变量不会被编译器优化,而synchronized标记的变量可以被编译器优化（如编译器重排序的优化）.</span><br><span class="line"><span class="number">5</span>）volatile是变量修饰符，仅能用于变量，而synchronized是一个方法或块的修饰符。</span><br><span class="line">volatile本质是在告诉<span class="variable constant_">JVM</span>当前变量在寄存器中的值是不确定的，使用前，需要先从主存中读取，因此可以实现可见性。而对n=n+<span class="number">1</span>,n++等操作时，volatile关键字将失效，不能起到像synchronized一样的线程同步（原子性）的效果。</span><br></pre></td></tr></table></figure>
+
+<h4 id="使用volatile的场景-——单例模式"><a href="#使用volatile的场景-——单例模式" class="headerlink" title="使用volatile的场景 ——单例模式"></a>使用volatile的场景 ——单例模式</h4><p>synchronized 太重，没必要</p>
+<p>DCL模式下的单例模式</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">DCL (Double Check Lock 双端检锁机制)</span><br><span class="line">    DCL机制不一定线程安全，原因是有指令重排的存在，加入<span class="keyword">volatile</span>可以禁止指令重排</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"> <span class="comment">//单例模式的DCL  双端检锁机制</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Demo2 <span class="title function_">getInstance</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (instance == <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">synchronized</span> (Demo2.class)&#123;</span><br><span class="line">                <span class="keyword">if</span> (instance == <span class="literal">null</span>)&#123;</span><br><span class="line">                    instance = <span class="keyword">new</span> <span class="title class_">Demo2</span>(); <span class="comment">//可能出现分配了地址但是没有初始化值， instance用												volatile修饰禁止指令重排</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">instance = <span class="keyword">new</span> <span class="title class_">SingletonDemo</span>(); <span class="comment">//可以分为以下3步</span></span><br><span class="line"></span><br><span class="line">memory = allocate(); <span class="comment">//1. 分配对象内存空间</span></span><br><span class="line">instance(memory); <span class="comment">//2. 初始化对象</span></span><br><span class="line">instance = memory; <span class="comment">//3. 设置instance指向分配的内存地址，此时instance!=null</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//步骤2 和 步骤3 不存在数据依赖关系，而且无论重排前还是重排后程序的执行结果在单线程中并没有改变，因此这种重排优化是允许的。</span></span><br><span class="line">    </span><br><span class="line">memory = allocate(); <span class="comment">//1. 分配对象内存空间</span></span><br><span class="line">instance = memory; <span class="comment">//2. 设置instance指向分配的内存地址，此时instance!=null   但是对象还没有初始化完成</span></span><br><span class="line">instance(memory); <span class="comment">//3. 初始化对象</span></span><br><span class="line"><span class="comment">//指令重排只会保证串行语义的执行一致性（单线程），但并不关心多线程间的语义一致性。</span></span><br><span class="line"><span class="comment">//所有当一条线程访问instance不为null时，由于instance实例未必已经初始化完成，也就造成了线程安全问题。</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-JMM—Java内存模型"><a href="#2-JMM—Java内存模型" class="headerlink" title="2. JMM—Java内存模型"></a>2. JMM—Java内存模型</h2><p>JMM(Java内存模型) 描述的是一组规则或规范，通过这种规范定义了程序中各种变量的访问方式，比如实例字段，静态字段和构成数组对象的元素</p>
+<p>规定：</p>
+<blockquote>
+<ol>
+<li>线程解锁前，必须把共享变量的值刷新回主内存</li>
+<li>线程加锁前，必须读取内存的最新值到自己的工作内存</li>
+<li>加锁解锁是同一把锁</li>
+</ol>
+</blockquote>
+<p>特性：</p>
+<blockquote>
+<ol>
+<li>可见性</li>
+<li>原子性</li>
+<li>有序性</li>
+</ol>
+</blockquote>
+<p>主内存和工作内存</p>
+<blockquote>
+<p>由于JVM运行程序的实体是线程，而每个线程创建时JVM都会为其创建一个工作内存，工作内存是每个线程的私有数据区域，而Java内存模型规定所有变量都存储在主内存，主内存是共享内存区域，所有线程都可以访问，但线程对变量的操作必须在工作内存中进行，首先要将变量从主内存中拷贝到自己的工作内存空间，然后对变量进行操作，操作完成后再将变量写回主内存。</p>
+</blockquote>
+<h2 id="3-CAS—CampareAndSwap"><a href="#3-CAS—CampareAndSwap" class="headerlink" title="3. CAS—CampareAndSwap"></a>3. CAS—CampareAndSwap</h2><p>CAS是一条CPU并发原语，作用是判断内存中某个位置的值是否为预期值，如果是则更改为新的值，这个过程是原子的。不会造成数据的不一致。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">public</span> <span class="keyword">final</span> <span class="type">boolean</span> <span class="title function_">compareAndSet</span><span class="params">(<span class="type">int</span> expect, <span class="type">int</span> update)</span> &#123;</span><br><span class="line">       <span class="keyword">return</span> unsafe.compareAndSwapInt(<span class="built_in">this</span>, valueOffset, expect, update);</span><br><span class="line">   &#125;</span><br><span class="line">										<span class="comment">//当前对象，，偏移量，    期望值，   新的值</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">native</span> <span class="type">boolean</span> <span class="title function_">compareAndSwapInt</span><span class="params">(Object var1, <span class="type">long</span> var2, <span class="type">int</span> var4, <span class="type">int</span> var5)</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">public</span> <span class="keyword">final</span> <span class="type">int</span> <span class="title function_">getAndIncrement</span><span class="params">()</span> &#123; <span class="comment">//number++  的AtomicInteger体现</span></span><br><span class="line">        <span class="keyword">return</span> unsafe.getAndAddInt(<span class="built_in">this</span>, valueOffset, <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">							<span class="comment">//当前对象，，偏移量	</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="type">int</span> <span class="title function_">getAndAddInt</span><span class="params">(Object var1, <span class="type">long</span> var2, <span class="type">int</span> var4)</span> &#123;</span><br><span class="line">        <span class="type">int</span> var5;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            var5 = <span class="built_in">this</span>.getIntVolatile(var1, var2);  <span class="comment">//通过当前对象和偏移量得到当前地址的变量值</span></span><br><span class="line">        &#125; <span class="keyword">while</span>(!<span class="built_in">this</span>.compareAndSwapInt(var1, var2, var5, var5 + var4)); </span><br><span class="line">		<span class="comment">//通过得到的var5作为期望值与内存中的值做比较，如果是则更改为新的值。</span></span><br><span class="line">    	<span class="comment">//多线程环境下，当前对象和偏移量得到当前地址的变量值的值可能会变</span></span><br><span class="line">    	<span class="comment">//若var5与期望值不同，则继续循环获取新的var5然后继续CAS ，开始自旋</span></span><br><span class="line">        <span class="keyword">return</span> var5;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>CAS的缺点：</p>
+<ol>
+<li>循环时间长开销大</li>
+<li>只能保证一个共享变量的原子操作</li>
+<li>引出来ABA问题</li>
+</ol>
+<h2 id="4-原子类AtomicInteger的ABA问题"><a href="#4-原子类AtomicInteger的ABA问题" class="headerlink" title="4. 原子类AtomicInteger的ABA问题"></a>4. 原子类AtomicInteger的ABA问题</h2><blockquote>
+<p>CAS算法实现一个重要前提需要取出内存中某个时刻的数据并在当下时刻比较并替换，那么在这个时间差会导致数据的变化。通俗说就是线程one在业务之初取出A和结束时内存的预期也是A，但是在业务的过程中可能出现数据的变化，A-B-C-…-A；</p>
+</blockquote>
+<blockquote>
+<p>尽管线程one的CAS操作成功，但是不代表这个过程就是没有问题的。</p>
+</blockquote>
+<p>版本号机制：AtomicStampedRefrence(ABA 问题的解决)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">AtomicStampedReference&lt;Integer&gt; stamped </span><br><span class="line">								= <span class="keyword">new</span> <span class="title class_">AtomicStampedReference</span>&lt;&gt;(<span class="number">100</span>,<span class="number">1</span>); <span class="comment">//初始值和初始版本号</span></span><br><span class="line">stamped.compareAndSet(<span class="number">101</span>,<span class="number">100</span>,stamped.getStamp(), stamped.getStamp()+<span class="number">1</span>);</span><br><span class="line">					<span class="comment">//期望值，最终值，期望版本号，更改版本号</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="5-集合类不安全问题"><a href="#5-集合类不安全问题" class="headerlink" title="5. 集合类不安全问题"></a>5. 集合类不安全问题</h2><p>arrayList 的解决方案：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="keyword">new</span> <span class="title class_">Vector</span>&lt;&gt;()</span><br><span class="line"><span class="number">2.</span> Collections.synchronizedList(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;());</span><br><span class="line"><span class="number">3.</span> <span class="keyword">new</span> <span class="title class_">CopyOnWriteArrayList</span>&lt;&gt;();  <span class="comment">//重点    写时复制</span></span><br><span class="line"><span class="comment">/*往一个容器中添加元素的时候，不直接往当前容器Object[]添加，而是先将容器进行copy，复制出一个新的容器Object[] newElements,</span></span><br><span class="line"><span class="comment">然后往新的容器Object[] newElements里添加元素，添加完元素之后，再将原容器的引用指向新的容器setArray(newElements);</span></span><br><span class="line"><span class="comment">这样做的好处是可以对CopyOnWrite容器进行并发读而不需要加锁，因为当前容器不会添加任何元素。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line">CopyOnWriteArrayList底层原理</span><br><span class="line">    <span class="comment">/** The lock protecting all mutators */</span></span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">transient</span> <span class="type">ReentrantLock</span> <span class="variable">lock</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ReentrantLock</span>();</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** The array, accessed only via getArray/setArray. */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">transient</span> <span class="keyword">volatile</span> Object[] array;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">add</span><span class="params">(E e)</span> &#123;</span><br><span class="line">        <span class="keyword">final</span> <span class="type">ReentrantLock</span> <span class="variable">lock</span> <span class="operator">=</span> <span class="built_in">this</span>.lock;</span><br><span class="line">        lock.lock();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Object[] elements = getArray(); <span class="comment">//创建副本</span></span><br><span class="line">            <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> elements.length;</span><br><span class="line">            Object[] newElements = Arrays.copyOf(elements, len + <span class="number">1</span>);</span><br><span class="line">            newElements[len] = e; <span class="comment">// 添加元素</span></span><br><span class="line">            setArray(newElements); <span class="comment">//将引用指向副本</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            lock.unlock();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>HashSet的解决方案：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> Collections.synchronizedSet(<span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;&gt;());</span><br><span class="line"><span class="number">2.</span> <span class="keyword">new</span> <span class="title class_">CopyOnWriteSet</span>&lt;&gt;();</span><br><span class="line">	底层还是一个CopyOnWriteArrayList()</span><br><span class="line">        </span><br><span class="line">HashSet的底层结构就是一个HashMap，  </span><br><span class="line">HashSet在add时只有一个值，而map是键值对结构，所以HashSet的add方法的参数作为key，value为一个 Object()对象</span><br></pre></td></tr></table></figure>
+
+<p>Map的解决方案：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ConcurrentHashMap&lt;&gt;()</span><br></pre></td></tr></table></figure>
+<h2 id="6-公平锁和非公平锁"><a href="#6-公平锁和非公平锁" class="headerlink" title="6. 公平锁和非公平锁"></a>6. 公平锁和非公平锁</h2><p>公平锁：是指多个线程按照申请锁的顺序来获取锁<br>非公平锁：是指多个线程获取锁的顺序并不是按照申请锁的顺序，有可能后申请的线程比先申请的线程优先获得锁，在高并发的情况下，有可能造成优先级反转或者饥饿现象</p>
+<p>对于Synchronized而言，也是一种非公平锁</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Creates an instance of &#123;<span class="doctag">@code</span> ReentrantLock&#125; with the</span></span><br><span class="line"><span class="comment"> * given fairness policy.</span></span><br><span class="line"><span class="comment"> * 默认为非公平锁</span></span><br><span class="line"><span class="comment"> * 公平锁在于每个线程在获取锁时先去查看此锁维护的等待队列，如果为空，或者当前线程是等待队列的第一个，就占有锁，否则就加入队列等待，以后会按照FIFO的规则从队列中取到自己</span></span><br><span class="line"><span class="comment"> * 非公平锁直接尝试占有锁，如果尝试失败，就采用类似公平锁的机制</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *非公平锁的优点在于吞吐量比公平锁大</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> fair &#123;<span class="doctag">@code</span> true&#125; if this lock should use a fair ordering policy</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="title function_">ReentrantLock</span><span class="params">(<span class="type">boolean</span> fair)</span> &#123;</span><br><span class="line">    sync = fair ? <span class="keyword">new</span> <span class="title class_">FairSync</span>() : <span class="keyword">new</span> <span class="title class_">NonfairSync</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>公平锁与非公平锁底层代码的区别：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">        * Performs non-fair tryLock.  tryAcquire is implemented in</span></span><br><span class="line"><span class="comment">        * subclasses, but both need nonfair try for trylock method.</span></span><br><span class="line"><span class="comment">        * 这是非公平锁</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">       <span class="keyword">final</span> <span class="type">boolean</span> <span class="title function_">nonfairTryAcquire</span><span class="params">(<span class="type">int</span> acquires)</span> &#123;</span><br><span class="line">           <span class="keyword">final</span> <span class="type">Thread</span> <span class="variable">current</span> <span class="operator">=</span> Thread.currentThread();</span><br><span class="line">           <span class="type">int</span> <span class="variable">c</span> <span class="operator">=</span> getState();</span><br><span class="line">           <span class="keyword">if</span> (c == <span class="number">0</span>) &#123;</span><br><span class="line">               <span class="comment">//这里直接判断锁有没有被占用  没有被占用就直接返回true</span></span><br><span class="line">               <span class="keyword">if</span> (compareAndSetState(<span class="number">0</span>, acquires)) &#123;</span><br><span class="line">                   setExclusiveOwnerThread(current);</span><br><span class="line">                   <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">else</span> <span class="keyword">if</span> (current == getExclusiveOwnerThread()) &#123;</span><br><span class="line">               <span class="type">int</span> <span class="variable">nextc</span> <span class="operator">=</span> c + acquires;</span><br><span class="line">               <span class="keyword">if</span> (nextc &lt; <span class="number">0</span>) <span class="comment">// overflow</span></span><br><span class="line">                   <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&quot;Maximum lock count exceeded&quot;</span>);</span><br><span class="line">               setState(nextc);</span><br><span class="line">               <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">       <span class="comment">/**</span></span><br><span class="line"><span class="comment">        * Fair version of tryAcquire.  Don&#x27;t grant access unless</span></span><br><span class="line"><span class="comment">        * recursive call or no waiters or is first.</span></span><br><span class="line"><span class="comment">        * 这是公平锁</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">       <span class="keyword">protected</span> <span class="keyword">final</span> <span class="type">boolean</span> <span class="title function_">tryAcquire</span><span class="params">(<span class="type">int</span> acquires)</span> &#123;</span><br><span class="line">           <span class="keyword">final</span> <span class="type">Thread</span> <span class="variable">current</span> <span class="operator">=</span> Thread.currentThread();</span><br><span class="line">           <span class="type">int</span> <span class="variable">c</span> <span class="operator">=</span> getState();</span><br><span class="line">           <span class="keyword">if</span> (c == <span class="number">0</span>) &#123;</span><br><span class="line">               <span class="comment">//主要是有一个hasQueuedPredecessors()的判断，判断该线程是不是队列头</span></span><br><span class="line">               <span class="keyword">if</span> (!hasQueuedPredecessors() &amp;&amp;</span><br><span class="line">                   compareAndSetState(<span class="number">0</span>, acquires)) &#123;</span><br><span class="line">                   setExclusiveOwnerThread(current);</span><br><span class="line">                   <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">else</span> <span class="keyword">if</span> (current == getExclusiveOwnerThread()) &#123;</span><br><span class="line">               <span class="type">int</span> <span class="variable">nextc</span> <span class="operator">=</span> c + acquires;</span><br><span class="line">               <span class="keyword">if</span> (nextc &lt; <span class="number">0</span>)</span><br><span class="line">                   <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&quot;Maximum lock count exceeded&quot;</span>);</span><br><span class="line">               setState(nextc);</span><br><span class="line">               <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="7-自旋锁"><a href="#7-自旋锁" class="headerlink" title="7. 自旋锁"></a>7. 自旋锁</h2><p>自旋锁是指尝试获取锁的线程不会立即阻塞，而是采用循环的方式去尝试获取锁，这样的好处是减少线程上下文切换的消耗，缺点是循环会消耗CPU。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 实现一个自旋锁</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SpinLockDemo</span> &#123;</span><br><span class="line">    <span class="comment">//原子引用线程   存储一个thread对象   与AtomicInteger相似</span></span><br><span class="line">    AtomicReference&lt;Thread&gt; reference = <span class="keyword">new</span> <span class="title class_">AtomicReference</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">myLock</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="type">Thread</span> <span class="variable">thread</span> <span class="operator">=</span> Thread.currentThread(); <span class="comment">//获取当前的thread对象</span></span><br><span class="line">        System.out.println(thread.getName() + <span class="string">&quot;come in&quot;</span>);</span><br><span class="line">        <span class="keyword">while</span> (!reference.compareAndSet(<span class="literal">null</span>,thread))&#123;   </span><br><span class="line">            <span class="comment">// 两个参数分别为预期值和更新值</span></span><br><span class="line">            <span class="comment">// 如果reference不为null，则自旋，否则reference更新为 thread对象并结束循环</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">myUnlock</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="type">Thread</span> <span class="variable">thread</span> <span class="operator">=</span> Thread.currentThread(); <span class="comment">//获取当前thread对象</span></span><br><span class="line">        reference.compareAndSet(thread,<span class="literal">null</span>);  <span class="comment">//判断当前的reference是否为获取到的thread对象，是，则更新为null，否则不操作，解锁的过程</span></span><br><span class="line">        System.out.println(thread.getName() + <span class="string">&quot;invoked myUnlock&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException &#123;</span><br><span class="line">        <span class="type">SpinLockDemo</span> <span class="variable">spinLockDemo</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SpinLockDemo</span>();</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">Thread</span>(() -&gt; &#123;</span><br><span class="line">            spinLockDemo.myLock();</span><br><span class="line">			</span><br><span class="line">            Thread.sleep(<span class="number">5</span>); <span class="comment">//暂停5秒，让BB线程自旋</span></span><br><span class="line">           </span><br><span class="line">            spinLockDemo.myUnlock();</span><br><span class="line">        &#125;,<span class="string">&quot;AA&quot;</span>).start();</span><br><span class="line">        </span><br><span class="line">        Thread.sleep(<span class="number">1</span>); <span class="comment">//保证AA线程在BB线程前面运行</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">Thread</span>(() -&gt; &#123;</span><br><span class="line">            spinLockDemo.myLock();</span><br><span class="line">            spinLockDemo.myUnlock();</span><br><span class="line">        &#125;,<span class="string">&quot;BB&quot;</span>).start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="8-读写锁"><a href="#8-读写锁" class="headerlink" title="8. 读写锁"></a>8. 读写锁</h2><p>ReentrantLock和Synchronized都是独占锁<br>ReentrantReadWriteLock的写是独占锁，读是共享锁</p>
+
+        </div>
+
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/04/02/mysql/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Mysql</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/04/02/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F+%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86(TCP_IP%20,%20HTTP_HTTPS)/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">操作系统与网络原理基础</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">18yang</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+</div>
+
+
+
+</body>
+</html>

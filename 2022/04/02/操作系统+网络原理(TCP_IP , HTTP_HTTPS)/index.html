@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="18yang">
+    
+    <title>
+        
+            操作系统与网络原理基础 |
+        
+        Subjugate
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Subjugate
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                LINKS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links">LINKS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">操作系统与网络原理基础</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">18yang</span>
+                        
+                            <span class="author-label">Lv1</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-04-02 21:07:59</span>
+        <span class="mobile">2022-04-02 21:07</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/java/">java</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><h3 id="1-进程和线程的区别"><a href="#1-进程和线程的区别" class="headerlink" title="1. 进程和线程的区别"></a>1. 进程和线程的区别</h3><ol>
+<li>调度： 进程是资源管理的基本单位，线程是程序执行的基本单位</li>
+<li>切换： 进程上下文切换比线程上下文切换慢很多</li>
+<li>拥有资源： 进程是拥有资源的一个独立单位，线程不拥有系统资源，但是可以访问隶属于进程的资源</li>
+<li>系统开销：创建或者撤销时，系统都要为之分配或回收系统资源，如内存空间，I&#x2F;O设备等，操作系统所付出的开销显著大于在创建或撤销线程时的开销，进程切换的开销也远大于线程切换的开销</li>
+</ol>
+<blockquote>
+<p>线程切换vs进程切换</p>
+<ol>
+<li>进程都有自己的虚拟地址空间，把虚拟地址转换为物理地址需要查找页表，页表查找是一个很慢的过程，因此通常使用Cache来缓存常用的地址映射，这样可以加速页表查找。当进程切换后页表也要进行切换，那么会导致Cache失效命中率低，虚拟地址转换为物理地址就会变慢，表现出来就是程序运行变慢。</li>
+<li>而线程切换不会导致Cache失效，因为线程无需切换地址空间。所以线程切换开销小。</li>
+</ol>
+</blockquote>
+<h3 id="2-协程和线程的区别？"><a href="#2-协程和线程的区别？" class="headerlink" title="2. 协程和线程的区别？"></a>2. 协程和线程的区别？</h3><ol>
+<li>线程和进程都是同步机制，协程是异步机制</li>
+<li>线程是抢占式，而协程是非抢占式的，需要用户释放使用权切换到其他协程，因此同一时间其实只有一个协程拥有运行权，相当于单线程的能力</li>
+<li>一个线程可以有多个协程</li>
+<li>协程完全由程序控制</li>
+<li>协程能保留上一次调用时的状态</li>
+</ol>
+<h3 id="3-进程间通信方式有哪些？"><a href="#3-进程间通信方式有哪些？" class="headerlink" title="3. 进程间通信方式有哪些？"></a>3. 进程间通信方式有哪些？</h3><ol>
+<li>管道      两个限制，1是半双工通信，数据只能单向流动，2是只能在父子进程间使用</li>
+<li>信号      信号可以在任何时候发给某一进程，而无需知道该进程的状态</li>
+<li>信号量   一个计数器，用来控制多个进程对共享资源的访问</li>
+<li>消息队列   </li>
+<li>共享内存     一个进程映射一段能被其他进程所访问的内存，多个进程都可以访问</li>
+<li>Socket   可用于不同机器间的进程通信，网络通信</li>
+</ol>
+<h3 id="4-线程间同步的方式有哪些？"><a href="#4-线程间同步的方式有哪些？" class="headerlink" title="4. 线程间同步的方式有哪些？"></a>4. 线程间同步的方式有哪些？</h3><ol>
+<li>临界值： 通过对多线程的串行化来访问公共资源，速度快，适合控制数据访问</li>
+<li>互斥量： 为协调共同对一个共享资源的单独访问而设计的</li>
+<li>信号量： 为控制一个具有有限数量用户资源而设计</li>
+<li>事件</li>
+</ol>
+<h3 id="5-什么是死锁？死锁产生的条件？"><a href="#5-什么是死锁？死锁产生的条件？" class="headerlink" title="5. 什么是死锁？死锁产生的条件？"></a>5. 什么是死锁？死锁产生的条件？</h3><p>两个或多个进程无限期的阻塞，相互等待的一种状态<br>四个必要条件：</p>
+<ol>
+<li>互斥条件： 一个资源一次只能被一个进程使用</li>
+<li>请求与保持条件： 一个进程因请求资源而阻塞时，对已获资源保持不放</li>
+<li>不剥夺条件： 进程获得的资源，在未完全使用完之前，不能强行剥夺</li>
+<li>循环等待条件： 若干进程之间形成一种头尾相接的环形等待资源关系</li>
+</ol>
+<p>如何解决死锁：<br>检测死锁并恢复<br>仔细对资源进行动态分配，避免死锁<br>破除死锁四个必要条件之一，防止死锁</p>
+<h3 id="6-进程调度测略？"><a href="#6-进程调度测略？" class="headerlink" title="6. 进程调度测略？"></a>6. 进程调度测略？</h3><ol>
+<li>先来先服务</li>
+<li>短作业优先</li>
+<li>最短剩余时间优先</li>
+<li>时间片轮转                          效率和时间片的大小有关</li>
+<li>优先级调度     为每一个进程分配一个优先级，按优先级调度，低优先级进程随着时间的推移增加优先级</li>
+</ol>
+<h2 id="网络原理"><a href="#网络原理" class="headerlink" title="网络原理"></a>网络原理</h2><h3 id="1-分层"><a href="#1-分层" class="headerlink" title="1. 分层"></a>1. 分层</h3><ol>
+<li>应用层：进程之间的交互         常见协议   DNS，HTTP，DHCP，FTP，POP3，SMTP，TELNET</li>
+<li>传输层：负责两台主机进程之间的通信提供数据传输服务， 常见协议 TCP    UDP</li>
+<li>网络层：选择合适的网间路由和交换节点，确保数据及时送达     常见协议   IP</li>
+<li>数据链路层：物理层提供比特流服务的基础上，建立相邻节点之间的数据链路，通过差错控制提供数据帧在信道上无差错的传输</li>
+<li>物理层： 比特流的透明传输</li>
+</ol>
+<h3 id="2-URI和URL的区别"><a href="#2-URI和URL的区别" class="headerlink" title="2. URI和URL的区别"></a>2. URI和URL的区别</h3><ol>
+<li>URI：统一资源标识符，唯一标识一个资源，类比身份证</li>
+<li>URL：统一资源定位符，提供资源的路径，类比家庭地址</li>
+</ol>
+<h3 id="3-ARP协议？"><a href="#3-ARP协议？" class="headerlink" title="3. ARP协议？"></a>3. ARP协议？</h3><p>ARP协议属于网络层协议，主要作用是实现从IP地址转换为MAC地址，在每个主机或者路由器中都建有一个ARP缓存表，表中有IP地址和对应的MAC地址。</p>
+<h3 id="4-TCP与UDP？"><a href="#4-TCP与UDP？" class="headerlink" title="4. TCP与UDP？"></a>4. TCP与UDP？</h3><p><img src="https://cdn.nlark.com/yuque/0/2022/jpeg/26761339/1648707760551-f6e90c08-ab66-48e0-b7d1-9651b3b18249.jpeg#clientId=u9783e6c1-43f9-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=uc816ac50&margin=%5Bobject%20Object%5D&originHeight=904&originWidth=1289&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u77d64125-7142-4c2c-942a-067b14eb359&title="></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/jpeg/26761339/1648707773669-c5ea8eab-a415-4a61-937d-57b01de0f558.jpeg#clientId=u9783e6c1-43f9-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=u7b37feb0&margin=%5Bobject%20Object%5D&originHeight=258&originWidth=549&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uc6d9b013-79ff-4b7e-93a5-cf4f7004fd7&title="></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>是否面向连接</th>
+<th>可靠性</th>
+<th>传输形式</th>
+<th>传输效率</th>
+<th>消耗资源</th>
+<th>应用场景</th>
+<th>首部字节</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TCP</td>
+<td>面向连接</td>
+<td>可靠</td>
+<td>字节流</td>
+<td>慢</td>
+<td>多</td>
+<td>文件，邮件</td>
+<td>20-60</td>
+</tr>
+<tr>
+<td>UDP</td>
+<td>无连接</td>
+<td>不可靠</td>
+<td>数据报文段</td>
+<td>快</td>
+<td>少</td>
+<td>视频，语音</td>
+<td>8</td>
+</tr>
+</tbody></table>
+<h3 id="5-TCP协议如何保证可靠传输"><a href="#5-TCP协议如何保证可靠传输" class="headerlink" title="5. TCP协议如何保证可靠传输"></a>5. TCP协议如何保证可靠传输</h3><p>主要有校验和，序列号，超时重传，流量控制，拥塞避免</p>
+<ol>
+<li>校验和：在发送端和接收端分别计算数据的校验和，如果不一致，则说明数据在传输过程中出现了差错，TCP将会丢弃和不确认此报文段。</li>
+<li>序列号：TCP会对每一个发送的字节进行编号，接收方接到数据后，会对发送方发送确认应答(ACK报文)，并且这个ACK报文中带有相应的确认编号，告诉发送方，下一次发送的数据从编号多少开始发。如果发送方发送相同的数据，接收端也可以通过序列号判断出，直接将数据丢弃。</li>
+<li>超时重传：在上面说了序列号的作用，但如果发送方在发送数据后一段时间内（可以设置重传计时器规定这段时间）没有收到确认序号ACK，那么发送方就会重新发送数据。这里发送方没有收到ACK可以分两种情况，如果是发送方发送的数据包丢失了，接收方收到发送方重新发送的数据包后会马上给发送方发送ACK；如果是接收方之前接收到了发送方发送的数据包，而返回给发送方的ACK丢失了，这种情况，发送方重传后，接收方会直接丢弃发送方冲重传的数据包，然后再次发送ACK响应报文。如果数据被重发之后还是没有收到接收方的确认应答，则进行再次发送。此时，等待确认应答的时间将会以2倍、4倍的指数函数延长，直到最后关闭连接。</li>
+<li>流量控制：如果发送端发送的数据太快，接收端来不及接收就会出现丢包问题。为了解决这个问题，TCP协议利用了滑动窗口进行了流量控制。在TCP首部有一个16位字段大小的窗口，窗口的大小就是接收端接收数据缓冲区的剩余大小。接收端会在收到数据包后发送ACK报文时，将自己的窗口大小填入ACK中，发送方会根据ACK报文中的窗口大小进而控制发送速度。如果窗口大小为零，发送方会停止发送数据。</li>
+<li>拥塞控制：如果网络出现拥塞，则会产生丢包等问题，这时发送方会将丢失的数据包继续重传，网络拥塞会更加严重，所以在网络出现拥塞时应注意控制发送方的发送数据，降低整个网络的拥塞程度。拥塞控制主要有四部分组成：慢开始、拥塞避免、快重传、快恢复，如下图(图片来源于网络)。</li>
+</ol>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26761339/1648709066486-07b185f7-1a37-448b-a728-19f32d945002.png#clientId=u9783e6c1-43f9-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=u83d82530&margin=%5Bobject%20Object%5D&originHeight=419&originWidth=1183&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uffe06603-7c01-4b1d-b8cc-c4aeeafc091&title="></p>
+<p>这里的发送方会维护一个拥塞窗口的状态变量，它和流量控制的滑动窗口是不一样的，滑动窗口是根据接收方数据缓冲区大小确定的，而拥塞窗口是根据网络的拥塞情况动态确定的，一般来说发送方真实的发送窗口为滑动窗口和拥塞窗口中的最小值。</p>
+<ol>
+<li>慢开始：为了避免一开始发送大量的数据而产生网络阻塞，会先初始化cwnd为1，当收到ACK后到下一个传输轮次，cwnd为2，以此类推成指数形式增长。</li>
+<li>拥塞避免：因为cwnd的数量在慢开始是指数增长的，为了防止cwnd数量过大而导致网络阻塞，会设置一个慢开始的门限值ssthresh，当cwnd&gt;&#x3D;ssthresh时，进入到拥塞避免阶段，cwnd每个传输轮次加1。但网络出现超时，会将门限值ssthresh变为出现超时cwnd数值的一半，cwnd重新设置为1，如上图，在第12轮出现超时后，cwnd变为1，ssthresh变为12。</li>
+<li>快重传：在网络中如果出现超时或者阻塞，则按慢开始和拥塞避免算法进行调整。但如果只是丢失某一个报文段，如下图(图片来源于网络)，则使用快重传算法。</li>
+</ol>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/26761339/1648709099963-c2ba1b72-019c-48b0-b81c-345820e815bf.png#clientId=u9783e6c1-43f9-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=u1070c6ff&margin=%5Bobject%20Object%5D&originHeight=365&originWidth=732&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u57152a85-639a-41f6-8b13-14609b46d9d&title="><br>从上图可知，接收方正确地接收到M1和M2，而M3丢失，由于没有接收到M3，在接收方收到M5、M6和M7时，并不会进行确认，也就是不会发送ACK。这时根据前面说的保证TCP可靠性传输中的序列号的作用，接收方这时不会接收M5，M6，M7，接收方可以什么都不会，因为发送方长时间未收到M3的确认报文，会对M3进行重传。除了这样，接收方也可以重复发送M2的确认报文，这样发送端长时间未收到M3的确认报文也会继续发送M3报文。</p>
+<ol start="4">
+<li>快恢复：从上上图圈4可以看到，当发送收到三个重复的ACK，会进行快重传和快恢复。快恢复是指将ssthresh设置为发生快重传时的cwnd数量的一半，而cwnd不是设置为1而是设置为为门限值ssthresh，并开始拥塞避免阶段。</li>
+</ol>
+<h3 id="6-三次握手与四次挥手？"><a href="#6-三次握手与四次挥手？" class="headerlink" title="6. 三次握手与四次挥手？"></a>6. 三次握手与四次挥手？</h3>
+        </div>
+
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/04/02/Java%20%20%20JUC/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Java JUC</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/04/02/hello-world/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Hello World</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">18yang</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+</div>
+
+
+
+</body>
+</html>
